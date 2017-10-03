@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Crash</title>
+    <title>RCC Social Network</title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -10,7 +10,23 @@
 
   <body>
     <div class="container">
+      <% if notice %>
+        <div class="alert alert-success"><%= notice %></div>
+      <% end %>
+      <% if alert %>
+        <div class="alert alert-danger"><%= alert %></div>
+      <% end %>
+
       <%= yield %>
+
+      <div class="pull-right">
+        <% if current_user %>
+          <%= link_to 'Log Out', logout_path %>
+        <% else %>
+          <%= link_to 'Log In', login_path %>
+          <%= link_to 'Sign Up', signup_path %>
+        <% end %>
+      <div>
     </div>
   </body>
 </html>
