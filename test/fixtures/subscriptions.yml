@@ -2,8 +2,8 @@
 
 one:
   leader: one
-  follower: one
+  follower: two
 
 two:
   leader: two
-  follower: two
+  follower: one
